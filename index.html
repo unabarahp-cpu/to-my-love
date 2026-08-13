@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09132f">
+
+<title>Gửi anh ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at 20% 15%, rgba(111,140,220,.18), transparent 25%),
+        radial-gradient(circle at 80% 25%, rgba(255,224,158,.10), transparent 22%),
+        linear-gradient(180deg, #07102b 0%, #0d1735 45%, #17264c 100%);
+    color: #fff;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===== BẦU TRỜI ===== */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: .7;
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,.75) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,224,157,.8) 1px, transparent 1.5px);
+    background-size: 97px 97px, 151px 151px, 211px 211px;
+    background-position: 20px 30px, 70px 90px, 110px 20px;
+    animation: stars 5s ease-in-out infinite alternate;
+}
+
+@keyframes stars {
+    from { opacity: .4; }
+    to { opacity: .85; }
+}
+
+.page {
+    position: relative;
+    z-index: 2;
+}
+
+.screen {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 45px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fade {
+    animation: fade .9s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MẶT TRĂNG ===== */
+
+.moon {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background: #fff4c9;
+    box-shadow:
+        0 0 25px rgba(255,244,201,.55),
+        0 0 70px rgba(255,229,150,.22);
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.moon:after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #07102b;
+    left: 25px;
+    top: -9px;
+}
+
+/* ===== CHỮ ===== */
+
+.script {
+    font-family: 'Dancing Script', cursive;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(44px, 10vw, 76px);
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    max-width: 480px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: 300;
+    opacity: .84;
+}
+
+/* ===== NÚT ===== */
+
+.button {
+    margin-top: 30px;
+    padding: 14px 29px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.08);
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: .3s ease;
+}
+
+.button:hover {
+    background: rgba(255,255,255,.17);
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: scale(.97);
+}
+
+/* ===== HAI BÉ GẤU ===== */
+
+.toys {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 35px;
+    margin: 35px 0 20px;
+}
+
+.toy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    background: rgba(255,255,255,.94);
+    color: #414663;
+    padding: 7px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-bottom: 9px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.18);
+}
+
+/* ===== THỎ ===== */
+
+.bunny {
+    width: 105px;
+    height: 170px;
+    position: relative;
+}
+
+.bunny-body {
+    position: absolute;
+    width: 65px;
+    height: 85px;
+    left: 20px;
+    bottom: 0;
+    border-radius: 50% 50% 35% 35%;
+    background: #fffafa;
+    box-shadow: inset -5px -5px rgba(210,198,205,.25);
+}
+
+.bunny-head {
+    position: absolute;
+    width: 82px;
+    height: 76px;
+    left: 11px;
+    top: 45px;
+    border-radius: 50%;
+    background: #fffafa;
+    box-shadow: inset -5px -5px rgba(210,198,205,.2);
+    z-index: 3;
+}
+
+.bunny-ear {
+    position: absolute;
+    width: 29px;
+    height: 70px;
+    top: 0;
+    border-radius: 50%;
+    background: #fffafa;
+    border: 1px solid #eee5e9;
+    z-index: 1;
+}
+
+.bunny-ear:after {
+    content: "";
+    position: absolute;
+    inset: 8px 7px;
+    border-radius: 50%;
+    background: #f6c9d8;
+}
+
+.bunny-ear.left {
+    left: 12px;
+    transform: rotate(-9deg);
+}
+
+.bunny-ear.right {
+    right: 12px;
+    transform: rotate(9deg);
+}
+
+.bunny-eye {
+    width: 5px;
+    height: 5px;
+    background: #453c47;
+    border-radius: 50%;
+    position: absolute;
+    top: 35px;
+}
+
+.bunny-eye.left {
+    left: 24px;
+}
+
+.bunny-eye.right {
+    right: 24px;
+}
+
+.bunny-nose {
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+    background: #d98da7;
+    position: absolute;
+    top: 47px;
+    left: 38px;
+}
+
+.bunny-clothes {
+    position: absolute;
+    width: 55px;
+    height: 59px;
+    left: 25px;
+    bottom: 4px;
+    background: #d7dff4;
+    border-radius: 22px 22px 15px 15px;
+    z-index: 4;
+}
+
+.bunny-clothes:after {
+    content: "♡";
+    position: absolute;
+    color: #8d9bc1;
+    left: 20px;
+    top: 18px;
+}
+
+/* ===== GẤU ===== */
+
+.bear {
+    width: 150px;
+    height: 180px;
+    position: relative;
+}
+
+.bear-body {
+    position: absolute;
+    width: 100px;
+    height: 110px;
+    left: 25px;
+    bottom: 0;
+    border-radius: 48% 48% 35% 35%;
+    background: #a56e4f;
+}
+
+.bear-head {
+    position: absolute;
+    width: 110px;
+    height: 100px;
+    left: 20px;
+    top: 14px;
+    border-radius: 50%;
+    background: #b47a58;
+    z-index: 2;
+}
+
+.ear {
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    top: 4px;
+    border-radius: 50%;
+    background: #966047;
+    z-index: 1;
+}
+
+.ear.left {
+    left: 4px;
+}
+
+.ear.right {
+    right: 4px;
+}
+
+.bear-face {
+    position: absolute;
+    width: 67px;
+    height: 49px;
+    left: 22px;
+    top: 40px;
+    border-radius: 50%;
+    background: #d69a73;
+}
+
+.bear-eye {
+    width: 6px;
+    height: 6px;
+    background: #33231f;
+    border-radius: 50%;
+    position: absolute;
+    top: 17px;
+}
+
+.bear-eye.left {
+    left: 17px;
+}
+
+.bear-eye.right {
+    right: 17px;
+}
+
+.muzzle {
+    position: absolute;
+    width: 28px;
+    height: 20px;
+    left: 19px;
+    top: 25px;
+    border-radius: 50%;
+    background: #efd0ad;
+}
+
+.nose {
+    position: absolute;
+    width: 8px;
+    height: 6px;
+    left: 28px;
+    top: 30px;
+    border-radius: 50%;
+    background: #4a2c26;
+}
+
+.pajamas {
+    position: absolute;
+    width: 74px;
+    height: 76px;
+    left: 38px;
+    bottom: 5px;
+    border-radius: 30px 30px 20px 20px;
+    background: #7487a9;
+    z-index: 4;
+}
+
+.pajamas:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 70px;
+    left: 36px;
+    top: 3px;
+    background: rgba(255,255,255,.35);
+}
+
+.eye-mask {
+    position: absolute;
+    width: 80px;
+    height: 24px;
+    left: 16px;
+    top: 43px;
+    border-radius: 50%;
+    background: #7180a4;
+    border: 2px solid #596887;
+    z-index: 8;
+}
+
+.eye-mask:before,
+.eye-mask:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 7px;
+    top: 6px;
+    border-bottom: 2px solid rgba(255,255,255,.45);
+}
+
+.eye-mask:before {
+    left: 15px;
+}
+
+.eye-mask:after {
+    right: 15px;
+}
+
+/* ===== PHONG THƯ ===== */
+
+.envelope {
+    width: min(460px, 88vw);
+    height: 280px;
+    border-radius: 14px;
+    background: #f5e6c8;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4c526d;
+    overflow: hidden;
+}
+
+.envelope:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-left: 1px solid rgba(110,86,54,.15);
+    border-right: 1px solid rgba(110,86,54,.15);
+    transform: skewY(-25deg);
+}
+
+.envelope-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.envelope-text div:first-child {
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+}
+
+.envelope-text div:last-child {
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* ===== LÁ THƯ ===== */
+
+.letter-wrap {
+    width: min(760px, 95vw);
+}
+
+.letter {
+    background: linear-gradient(
+        180deg,
+        rgba(255,250,238,.99),
+        rgba(247,238,217,.99)
+    );
+    color: #303246;
+    border-radius: 9px;
+    padding: clamp(28px, 6vw, 58px);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.32),
+        0 2px 6px rgba(0,0,0,.1);
+    position: relative;
+}
+
+.letter:before {
+    content: "♡";
+    position: absolute;
+    top: 18px;
+    right: 23px;
+    color: #bd718d;
+    font-size: 23px;
+}
+
+.letter:after {
+    content: "✦";
+    position: absolute;
+    bottom: 18px;
+    left: 23px;
+    color: #c8a866;
+    font-size: 16px;
+}
+
+.letter-title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: #59698f;
+    font-size: clamp(34px, 8vw, 48px);
+    margin-bottom: 35px;
+}
+
+.letter p {
+    font-size: 14px;
+    line-height: 2.05;
+    margin: 0 0 21px;
+}
+
+.letter .quote {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    line-height: 1.7;
+    text-align: center;
+    color: #72546c;
+    margin: 28px 0;
+}
+
+.letter .emphasis {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 27px;
+    color: #59698f;
+    margin: 30px 0;
+}
+
+.letter .divider {
+    text-align: center;
+    color: #b39b76;
+    letter-spacing: 7px;
+    margin: 32px 0;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 29px;
+    color: #59698f;
+    margin-top: 35px;
+}
+
+/* ===== KẾT ===== */
+
+.final-card {
+    width: min(650px, 94vw);
+    text-align: center;
+    padding: 45px 25px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+}
+
+.final-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(42px, 10vw, 65px);
+    margin-bottom: 25px;
+}
+
+.final-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(25px, 6vw, 36px);
+    line-height: 1.7;
+    color: #fff0c9;
+}
+
+.footer {
+    font-size: 11px;
+    opacity: .5;
+    margin-top: 35px;
+}
+
+/* ===== TIM BAY ===== */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    z-index: 20;
+    pointer-events: none;
+    animation: heart 6s linear forwards;
+}
+
+@keyframes heart {
+    0% {
+        transform: translateY(0) scale(.7);
+        opacity: 0;
+    }
+    15% {
+        opacity: .8;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.15) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 35px 15px;
+    }
+
+    .moon {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 25px;
+    }
+
+    .moon:after {
+        width: 63px;
+        height: 63px;
+        left: 20px;
+        top: -7px;
+    }
+
+    .toys {
+        gap: 7px;
+        transform: scale(.88);
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+
+    .letter p {
+        font-size: 13.5px;
+        line-height: 1.95;
+    }
+
+    .letter .quote {
+        font-size: 23px;
+    }
+
+    .letter .emphasis {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<main class="page">
+
+<!-- ===== MỞ ĐẦU ===== -->
+
+<section class="screen" id="home">
+
+    <div class="moon"></div>
+
+    <div class="title">
+        Gửi anh...
+    </div>
+
+    <div class="subtitle">
+        Có một điều em muốn gửi đến anh.
+        <br>
+        Không chỉ nằm trong chiếc hộp quà,
+        mà còn ở nơi này.
+    </div>
+
+    <button class="button" onclick="openToys()">
+        Mở ra nhé ♡
+    </button>
+
+</section>
+
+
+<!-- ===== HAI BÉ GẤU ===== -->
+
+<section class="screen hidden" id="toys">
+
+    <div class="subtitle">
+        Trước khi đọc thư,
+        <br>
+        em muốn anh gặp hai bé này trước.
+    </div>
+
+    <div class="toys">
+
+        <!-- BÉ THỎ -->
+        <div class="toy">
+
+            <div class="name">
+                em Sirin ♡
+            </div>
+
+            <div class="bunny">
+
+                <div class="bunny-ear left"></div>
+                <div class="bunny-ear right"></div>
+
+                <div class="bunny-head">
+                    <div class="bunny-eye left"></div>
+                    <div class="bunny-eye right"></div>
+                    <div class="bunny-nose"></div>
+                </div>
+
+                <div class="bunny-body"></div>
+                <div class="bunny-clothes"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BÉ GẤU -->
+        <div class="toy">
+
+            <div class="name">
+                Tuất Dũng ♡
+            </div>
+
+            <div class="bear">
+
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+
+                <div class="bear-head">
+
+                    <div class="bear-face">
+
+                        <div class="bear-eye left"></div>
+                        <div class="bear-eye right"></div>
+
+                        <div class="muzzle"></div>
+                        <div class="nose"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="bear-body"></div>
+                <div class="pajamas"></div>
+                <div class="eye-mask"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="subtitle">
+        Một bé mang tên em.
+        <br>
+        Một bé mang tên anh.
+        <br><br>
+        Hai bé sẽ ở cạnh nhau trước,
+        trong những ngày chúng mình còn ở xa.
+    </div>
+
+    <button class="button" onclick="openEnvelope()">
+        Có một lá thư nữa ♡
+    </button>
+
+</section>
+
+
+<!-- ===== PHONG THƯ ===== -->
+
+<section class="screen hidden" id="envelope">
+
+    <div class="envelope fade">
+
+        <div class="envelope-text">
+
+            <div>
+                Gửi anh ♡
+            </div>
+
+            <div>
+                Một lá thư từ em
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="button" onclick="openLetter()">
+        Mở thư ✉
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     LÁ THƯ
+     
+     NỘI DUNG BÊN DƯỚI GIỮ NGUYÊN VĂN THEO THƯ BẠN GỬI
+========================================================= -->
+
+<section class="screen hidden" id="letter">
+
+<div class="letter-wrap fade">
+
+<article class="letter">
+
+    <div class="letter-title">
+        Gửi anh,
+    </div>
+
+    <p>
+        Em đã nghĩ khá lâu không biết phải viết gì vào lá thư này.
+    </p>
+
+    <p>
+        Có rất nhiều điều em muốn nói với anh, nhưng đến lúc ngồi xuống viết lại chẳng biết nên bắt đầu từ đâu. Có lẽ vì những điều em muốn nói đều là những điều rất nhỏ. Nhỏ đến mức bình thường em sẽ chẳng bao giờ nghĩ rằng mình cần phải viết chúng ra.
+    </p>
+
+    <p>
+        Nhưng hôm nay em muốn anh biết.
+    </p>
+
+    <p>
+        Hai bé gấu bông này là món quà em muốn gửi cho anh.
+    </p>
+
+    <p>
+        Một bé mang tên em, một bé mang tên anh.
+    </p>
+
+    <p>
+        Em đã nghĩ rằng, vì chúng mình không thể lúc nào cũng ở cạnh nhau, bây giờ em không thể ở bên anh mỗi ngày, không thể cùng anh trải qua những buổi tối bình thường, cũng chẳng thể mỗi khi anh mệt lại chạy đến ôm anh một cái.
+    </p>
+
+    <p>
+        Vậy nên em gửi hai bé gấu này đến trước.
+    </p>
+
+    <p>
+        Để khi anh nhìn thấy hai bé nằm cạnh nhau, anh có thể nghĩ rằng em vẫn luôn ở đây, bên cạnh anh.
+    </p>
+
+    <p>
+        Phía sau bé gấu của anh, em còn để lại một lời chúc ngủ ngon. Có thể nó chẳng phải điều gì quá đặc biệt, nhưng em rất thích ý nghĩ rằng những đêm em không thể ở bên cạnh anh, ít nhất anh vẫn có thể nhìn thấy lời chúc ấy.
+    </p>
+
+    <p>
+        Nếu một ngày nào đó anh mệt, hãy ôm bé gấu đi ngủ, và hãy như em đang ở bên cạnh anh, vừa ôm anh một cái rồi thì thầm nho nhỏ: “Ngủ ngon nhé. Ngày mai chúng mình lại cố gắng cùng nhau.”
+    </p>
+
+    <div class="divider">♡ ✦ ♡</div>
+
+    <p>
+        Anh này,
+    </p>
+
+    <p>
+        Nếu một ngày nào đó anh quên mất chúng ta đã bắt đầu như thế nào, quên mất vì sao chúng ta lại yêu nhau, hoặc đơn giản là có một ngày anh chợt thấy tình yêu của chúng ta trở nên quá bình thường…
+    </p>
+
+    <p>
+        Thì anh hãy mở lại lá thư này.
+    </p>
+
+    <p>
+        Anh không cần phải nhớ tất cả những chi tiết nhỏ nhặt hay điều gì quá lớn lao đâu. Chỉ cần nhớ rằng đã từng có một người rất vui chỉ vì nhìn thấy tên anh xuất hiện trên màn hình.
+    </p>
+
+    <p>
+        Đã từng có một người nhớ một câu nói rất vu vơ của anh, nhớ một cuộc gọi chẳng có gì đặc biệt, hay nhớ những lần hai đứa nói chuyện đến khuya rồi mới chịu đi ngủ.
+    </p>
+
+    <p>
+        Đã từng có một người ở rất xa anh nhưng vẫn muốn biết hôm nay anh ăn gì, có mệt không, có chuyện gì khiến anh buồn không…
+    </p>
+
+    <p>
+        Và đã từng có một người nghĩ rằng:
+    </p>
+
+    <div class="emphasis">
+        Thật may vì giữa hàng tỷ người trên thế giới này, chúng ta lại gặp được nhau.
+    </div>
+
+    <p>
+        Nếu sau này giữa hai chúng ta có những ngày không vui, nếu có lúc giận nhau, mệt mỏi vì khoảng cách, hoặc chẳng thể hiểu cho nhau như lúc ban đầu nữa…
+    </p>
+
+    <p>
+        Thì em mong chúng ta đừng vội nghĩ rằng tình yêu đã biến mất mà có lẽ chỉ đơn giản là chúng ta đang mệt thôi.
+    </p>
+
+    <p>
+        Hãy nghỉ một chút, ôm lấy nhau một chút, nói với nhau những điều mà mình vẫn chưa kịp nói.
+    </p>
+
+    <p>
+        Rồi mình lại tiếp tục, nhé anh?
+    </p>
+
+    <div class="divider">♡ ✦ ♡</div>
+
+    <p>
+        Thực sự thì em cũng hay nghĩ về tương lai của chúng ta.
+    </p>
+
+    <p>
+        Viễn cảnh tương lai ấy trong đầu em không quá xa xôi hay hoàn hảo gì hết. Em cũng không biết sau này chúng ta sẽ trở thành những người như thế nào, sẽ sống ở đâu, công việc sẽ ra sao, cuộc sống sẽ thay đổi bao nhiêu…
+    </p>
+
+    <p>
+        Nhưng em có một vài điều rất đỗi bình thường mà em luôn mong đợi. 
+    </p>
+
+    <p>
+        Em mong sẽ có một ngày chúng ta không còn phải nhìn nhau qua màn hình nữa.
+    </p>
+
+    <p>
+        Em mong một ngày khi anh mệt, em có thể ở ngay bên cạnh thay vì chỉ hỏi anh qua điện thoại rằng “Anh ổn không?”
+    </p>
+
+    <p>
+        Em mong những lời chúc ngủ ngon này không còn phải gửi qua tin nhắn.
+    </p>
+
+    <p>
+        Em mong có thể nhìn thấy anh buồn ngủ, kéo chăn cho anh, rồi mới yên tâm đi ngủ.
+    </p>
+
+    <p>
+        Em mong có những ngày chẳng cần làm gì đặc biệt cả, hai đứa cùng đi ăn một món mình thích, cùng đi xem một bộ phim chiếu rạp nào đó,  cùng than thở về một ngày thật dài.
+    </p>
+
+    <p>
+        Có thể sẽ có những ngày chúng ta vẫn cãi nhau vì những chuyện rất ngốc nghếch và rất đỗi nhỏ nhặt.
+    </p>
+
+    <p>
+        Có thể em vẫn sẽ giận dỗi.
+    </p>
+
+    <p>
+        Anh vẫn sẽ có những lúc làm em buồn.
+    </p>
+
+    <p>
+        Nhưng sau tất cả, em vẫn mong khi một ngày dài kết thúc, người chúng ta muốn quay về bên cạnh vẫn là đối phương.
+    </p>
+
+    <p>
+        Em không mong cầu vào một tình yêu lúc nào cũng bình yên không có mâu thuẫn, em chỉ mong đó là một tình yêu mà cả hai chúng mình đều muốn trân trọng lâu thật lâu.
+    </p>
+
+    <div class="divider">♡ ✦ ♡</div>
+
+    <p>
+        Em cũng muốn nói với anh một điều về tương lai.
+    </p>
+
+    <p>
+        Em hy vọng hai bé gấu này sẽ ở cạnh nhau thật lâu. Em hy vọng một ngày nào đó, khi nhìn thấy chúng, anh sẽ nhớ về khoảng thời gian chúng mình từng yêu nhau từ hai nơi rất xa. Nhớ về những đêm chúc nhau ngủ ngon qua màn hình, những lần nhớ nhau nhưng chẳng thể chạy đến bên nhau, và cả hai đứa đã từng cố gắng thế nào để khoảng cách không trở thành lý do khiến mình buông tay.
+    </p>
+
+    <p>
+        Nhưng em cũng biết tương lai là thứ chẳng ai có thể chắc chắn.
+    </p>
+
+    <p>
+        Em không muốn viết rằng chúng ta nhất định sẽ ở bên nhau mãi mãi, bởi em không thể biết cuộc đời sau này sẽ đưa đẩy chúng ta đến đâu.
+    </p>
+
+    <p>
+        Điều duy nhất em có thể nói là, ở hiện tại, em thật lòng muốn chúng ta cùng nhau đi tiếp.
+    </p>
+
+    <p>
+        Còn nếu một ngày rất xa nào đó, chúng ta không còn đi cùng nhau nữa…
+    </p>
+
+    <p>
+        Nếu ngày ấy thật sự đến, anh đừng giữ bé gấu mang tên em chỉ vì sợ em buồn. Nếu nhìn thấy nó khiến anh nhớ về em quá nhiều, hoặc nhớ về những điều không vui, thì anh có thể gửi nó về cho em.
+    </p>
+
+    <p>
+        Anh không cần phải giữ lại một món đồ chỉ để chứng minh rằng chúng ta đã từng yêu nhau.
+    </p>
+
+    <p>
+        Em sẽ nhận lại nó.
+    </p>
+
+    <p>
+        Và em cũng sẽ không trách anh đâu.
+    </p>
+
+    <p>
+        Bởi vì nếu một ngày chúng ta phải trở thành hai người xa lạ, điều em mong nhất vẫn là anh có thể bước tiếp thật thoải mái mà không còn gì phải vướng bận chỉ vì những thứ không tốt đã xảy ra trong quá khứ.
+    </p>
+
+    <p>
+        Nhưng xin anh đừng vứt nó đi nhé.
+    </p>
+
+    <p>
+        Không phải vì em muốn anh phải giữ một phần của em mãi mãi, mà vì bé gấu ấy mang tên em. 
+    </p>
+
+    <p>
+        Em mong nếu một ngày nó không còn thuộc về cuộc sống của anh nữa, nó có thể trở về với em.
+    </p>
+
+    <p>
+        Còn bé gấu mang tên anh… nếu đến lúc ấy mà anh vẫn muốn giữ, thì cứ giữ lại.
+    </p>
+
+    <p>
+        Nhưng nếu anh không muốn, cũng không sao.
+    </p>
+
+    <p>
+        Bởi vì điều em muốn giữ lại không phải là hai bé gấu mà là những kỷ niệm đẹp đẽ chúng mình từng có khi bên cạnh nhau.
+    </p>
+
+    <p>
+        Và nếu may mắn, nhiều năm sau này, khi hai bé gấu đã cũ đi, chúng ta vẫn còn ở cạnh nhau để nhìn lại lá thư này rồi bật cười vì ngày đó em đã nghĩ xa xôi đến thế.
+    </p>
+
+    <p>
+        Thật lòng thì em thích tương lai ấy hơn.
+    </p>
+
+    <p>
+        Nên hiện tại, mình đừng nghĩ đến ngày phải trả lại, cứ để hai bé ở cạnh nhau trước đã.
+    </p>
+
+    <p>
+        Cũng giống như chúng ta vậy.
+    </p>
+
+    <p>
+        Còn tương lai thì để sau này chúng mình cùng nhau viết tiếp.
+    </p>
+
+    <div class="divider">♡ ✦ ♡</div>
+
+    <p>
+        Em không biết mình sẽ đi được bao xa.
+    </p>
+
+    <p>
+        Nhưng hiện tại, em vẫn muốn đi cùng anh.
+    </p>
+
+    <p>
+        Từng ngày, từng ngày một.
+    </p>
+
+    <p>
+        Nếu có ngày thấy vui vẻ thì cùng nhau chia sẻ niềm vui.
+    </p>
+
+    <p>
+        Nếu có ngày thấy mệt mỏi thì mình cùng nghỉ ngơi.
+    </p>
+
+    <p>
+        Nếu có lúc chúng mình lỡ lạc đường thì hãy cùng tìm lại lối đi đúng.
+    </p>
+
+    <p>
+        Và nếu có lúc một trong hai người quên mất mình đang cố gắng vì điều gì…
+    </p>
+
+    <p>
+        Thì người còn lại hãy nhắc cho người kia nhớ.
+    </p>
+
+    <p>
+        Nhớ rằng đã từng có hai người ở cách nhau rất xa nhưng vẫn chọn yêu nhau.
+    </p>
+
+    <p>
+        Nhớ rằng đã từng có một người gửi cả tên mình đến cho người kia chỉ để anh ấy cảm thấy mình không thật sự ở một mình.
+    </p>
+
+    <p>
+        Và nhớ rằng…
+    </p>
+
+    <div class="emphasis">
+        Ở đâu đó, vẫn luôn có một người rất thương anh.
+    </div>
+
+    <div class="divider">♡ ✦ ♡</div>
+
+    <p>
+        Còn bây giờ, anh hãy giữ bé gấu này thật ngoan nhé.
+    </p>
+
+    <p>
+        Tối nay, nếu nhớ em thì ôm nó một chút.
+    </p>
+
+    <p>
+        Và trước khi ngủ, nhớ đọc lời chúc ở phía sau.
+    </p>
+
+    <p>
+        Đó là câu mà em muốn tự mình nói với anh mỗi tối, chỉ tiếc là khoảng cách chưa cho phép em làm điều đó.
+    </p>
+
+    <p>
+        Ngủ ngon nhé, anh.
+    </p>
+
+    <p>
+        Mong cho những giấc ngủ của anh đều thật bình yên.
+    </p>
+
+    <p>
+        Mong ngày mai thức dậy, anh vẫn có thật nhiều điều để mong chờ.
+    </p>
+
+    <p>
+        Và mong một trong những điều anh mong chờ nhất… sẽ là ngày chúng ta được ở cạnh nhau.
+    </p>
+
+    <p>
+        Em yêu anh.
+    </p>
+
+    <div class="signature">
+        — sirin/mimi.
+    </div>
+
+</article>
+
+<button class="button" onclick="showFinal()">
+    ♡
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ===== MÀN HÌNH CUỐI ===== -->
+
+<section class="screen hidden" id="final">
+
+    <div class="moon"></div>
+
+    <div class="final-card fade">
+
+        <div class="final-title">
+            Ngủ ngon nhé, anh. ♡
+        </div>
+
+        <div class="final-text">
+            Mong cho những giấc ngủ của anh
+            đều thật bình yên.
+            <br><br>
+            Và mong một trong những điều anh mong chờ nhất…
+            <br>
+            sẽ là ngày chúng ta được ở cạnh nhau.
+        </div>
+
+        <div class="footer">
+            — sirin/mimi.
+        </div>
+
+        <button class="button" onclick="goHome()">
+            Đọc lại từ đầu ↺
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script>
+
+function hideAll() {
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("toys").classList.add("hidden");
+    document.getElementById("envelope").classList.add("hidden");
+    document.getElementById("letter").classList.add("hidden");
+    document.getElementById("final").classList.add("hidden");
+}
+
+function show(id) {
+    hideAll();
+
+    const element = document.getElementById(id);
+
+    element.classList.remove("hidden");
+    element.classList.add("fade");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    createHearts();
+}
+
+function openToys() {
+    show("toys");
+}
+
+function openEnvelope() {
+    show("envelope");
+}
+
+function openLetter() {
+    show("letter");
+}
+
+function showFinal() {
+    show("final");
+}
+
+function goHome() {
+    show("home");
+}
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const symbols = ["♡", "♥", "✦", "⋆"];
+
+    heart.innerHTML =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (10 + Math.random() * 14) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 9000);
+}
+
+function createHearts() {
+
+    for (let i = 0; i < 7; i++) {
+
+        setTimeout(function() {
+            createHeart();
+        }, i * 300);
+
+    }
+}
+
+setTimeout(function() {
+    createHearts();
+}, 1000);
+
+</script>
+
+</body>
+</html>
